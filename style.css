@@ -1,0 +1,311 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #050810;
+    color: #e2e8f0;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.destaque {
+    background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+}
+
+.cabecalho {
+    background: rgba(5, 8, 16, 0.7);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.menu_lista {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 3rem;
+}
+
+.menu_lista a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.menu_lista a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%);
+    transition: width 0.3s ease;
+}
+
+.menu_lista .ativo a, .menu_lista a:hover {
+    color: #fff;
+}
+
+.menu_lista .ativo a::after, .menu_lista a:hover::after {
+    width: 100%;
+}
+
+section {
+    padding: 120px 0 80px 0;
+    position: relative;
+}
+
+.home {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.glow-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(0, 210, 255, 0.15) 0%, rgba(5, 8, 16, 0) 70%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.badge {
+    background: rgba(0, 210, 255, 0.1);
+    color: #00d2ff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    width: max-content;
+    margin: 0 auto 2rem auto;
+    border: 1px solid rgba(0, 210, 255, 0.2);
+}
+
+.home_titulo, .secao_titulo, .servicos_titulos, h2 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.home_texto, .secao_texto {
+    font-size: 1.15rem;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 2.5rem auto;
+    color: #94a3b8;
+}
+
+.botao {
+    display: block;
+    width: max-content;
+    margin: 0 auto;
+    padding: 1rem 2.5rem;
+    background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1.05rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0, 210, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.botao:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 25px rgba(0, 210, 255, 0.4);
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    margin-top: 4rem;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 1.5rem;
+    backdrop-filter: blur(10px);
+    transition: all 0.4s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(0, 210, 255, 0.4);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 210, 255, 0.1);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.card_imagem {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    height: 260px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card:hover .card_imagem {
+    transform: scale(1.03);
+}
+
+.card_titulo {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.card_descricao {
+    color: #94a3b8;
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.card_preco {
+    font-size: 1.1rem;
+    color: #00d2ff;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: rgba(0, 210, 255, 0.1);
+    padding: 5px 12px;
+    border-radius: 8px;
+}
+
+.contato {
+    text-align: center;
+    background: linear-gradient(to top, rgba(0, 210, 255, 0.05) 0%, transparent 100%);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.contato p {
+    margin-bottom: 1rem;
+    color: #94a3b8;
+    font-size: 1.1rem;
+}
+
+.contato .escola {
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 2rem;
+}
+
+.contato-opcoes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2.5rem;
+}
+
+.qr-code-box {
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 10px 25px rgba(0, 210, 255, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.qr-code-box:hover {
+    transform: scale(1.05);
+}
+
+.qr-code-box img {
+    width: 150px;
+    height: 150px;
+}
+
+.qr-code-box span {
+    color: #050810;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.botao-whatsapp {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: max-content;
+    margin: 0 auto;
+    padding: 1rem 2.5rem;
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);
+    transition: all 0.3s ease;
+}
+
+.botao-whatsapp:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 25px rgba(37, 211, 102, 0.4);
+}
+
+.rodape {
+    text-align: center;
+    padding: 2rem;
+    background: #03050a;
+    color: #475569;
+    font-size: 0.9rem;
+}
+
+.animar {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animar.visivel {
+    opacity: 1;
+    transform: translateY(0);
+}
